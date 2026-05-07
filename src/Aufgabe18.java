@@ -29,28 +29,16 @@ public class Aufgabe18 {
         option = scanner.nextInt();
 
         switch (option) {
-            case MARCH:
-            case APRIL:
-            case MAY:
-                System.out.println("Month " + option + " is " + spring + ".");
-                break;
-            case JUNE:
-            case JULY:
-            case AUGUST:
-                System.out.println("Month " + option + " is " + summer + ".");
-                break;
-            case SEPTEMBER:
-            case OCTOBER:
-            case NOVEMBER:
-                System.out.println("Month " + option + " is " + autumn + ".");
-                break;
-            case DECEMBER:
-            case JANUARY:
-            case FEBRUARY:
-                System.out.println("Month " + option + " is " + winter + ".");
-                break;
-            default:
-                System.out.println("No Season!");
+            case MARCH, APRIL, MAY ->
+                    System.out.println("Month " + option + " is " + spring + ".");
+            case JUNE, JULY, AUGUST ->
+                    System.out.println("Month " + option + " is " + summer + ".");
+            case SEPTEMBER, OCTOBER, NOVEMBER ->
+                    System.out.println("Month " + option + " is " + autumn + ".");
+            case DECEMBER, JANUARY, FEBRUARY ->
+                    System.out.println("Month " + option + " is " + winter + ".");
+            default ->
+                    System.out.println("No Season!");
         }
 
         scanner.close();
