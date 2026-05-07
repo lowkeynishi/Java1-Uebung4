@@ -5,11 +5,6 @@ public class Aufgabe18 {
 
         Scanner scanner = new Scanner(System.in);
 
-        final String spring = "Spring";
-        final String summer = "Summer";
-        final String autumn = "Autumn";
-        final String winter = "Winter";
-
         final int JANUARY = 1;
         final int FEBRUARY = 2;
         final int MARCH = 3;
@@ -23,22 +18,21 @@ public class Aufgabe18 {
         final int NOVEMBER = 11;
         final int DECEMBER = 12;
 
-        int option;
+        System.out.print("Enter number of a month: ");
+        int option = scanner.nextInt();
 
-        System.out.print("Enter number of a month: \n");
-        option = scanner.nextInt();
+        String season = switch (option) {
+            case MARCH, APRIL, MAY -> "Spring";
+            case JUNE, JULY, AUGUST -> "Summer";
+            case SEPTEMBER, OCTOBER, NOVEMBER -> "Autumn";
+            case DECEMBER, JANUARY, FEBRUARY -> "Winter";
+            default -> "No Season";
+        };
 
-        switch (option) {
-            case MARCH, APRIL, MAY ->
-                    System.out.println("Month " + option + " is " + spring + ".");
-            case JUNE, JULY, AUGUST ->
-                    System.out.println("Month " + option + " is " + summer + ".");
-            case SEPTEMBER, OCTOBER, NOVEMBER ->
-                    System.out.println("Month " + option + " is " + autumn + ".");
-            case DECEMBER, JANUARY, FEBRUARY ->
-                    System.out.println("Month " + option + " is " + winter + ".");
-            default ->
-                    System.out.println("No Season!");
+        if (season.equals("No Season")) {
+            System.out.println("No Season!");
+        } else {
+            System.out.println("Month " + option + " is " + season + ".");
         }
 
         scanner.close();
